@@ -45,4 +45,6 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           VERSION: ${{ matrix.version }}
           REPOSITORY: osism/virtualbmc
-        if: github.ref == 'refs/heads/main'
+        if: |
+          github.repository == 'osism/container-image-virtualbmc' &&
+          github.ref == 'refs/heads/main'
